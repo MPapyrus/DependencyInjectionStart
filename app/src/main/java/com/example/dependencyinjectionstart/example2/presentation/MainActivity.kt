@@ -13,5 +13,7 @@ class MainActivity : AppCompatActivity() {
         val activity = Activity()
 
         activity.keyboard.toString()
+        activity.mouse.toString()
+        activity.monitor.toString()
     }
 }
