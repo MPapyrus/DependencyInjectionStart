@@ -8,9 +8,11 @@ import dagger.Provides
 
 
 @Module
-interface DomainModule {
+class DomainModule {
 
-    @Binds
-    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository
+    @Provides
+    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository {
+        return impl
+    }
 
 }
