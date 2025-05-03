@@ -4,15 +4,12 @@ import com.example.dependencyinjectionstart.example2.data.repository.ExampleRepo
 import com.example.dependencyinjectionstart.example2.domain.ExampleRepository
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 
 @Module
-class DomainModule {
+interface DomainModule {
 
-    @Provides
-    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository {
-        return impl
-    }
+    @Binds
+    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository
 
 }
