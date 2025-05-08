@@ -1,6 +1,7 @@
 package com.example.dependencyinjectionstart.example2.di
 
 import android.content.Context
+import com.example.dependencyinjectionstart.example1.Activity
 import com.example.dependencyinjectionstart.example2.data.database.ExampleDatabase
 import com.example.dependencyinjectionstart.example2.data.network.ExampleApiService
 import com.example.dependencyinjectionstart.example2.presentation.ExampleViewModel
@@ -15,13 +16,11 @@ import javax.inject.Singleton
     modules = [
         DomainModule::class,
         DataModule::class,
-        ViewModelModule::class
     ]
 )
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
-    fun inject(activity: MainActivity2)
+    fun activityComponentFactory(): ActivityComponent.Factory
 
     @Component.Factory
     interface ApplicationComponentFactory {
